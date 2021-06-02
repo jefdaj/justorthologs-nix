@@ -8,13 +8,9 @@ buildPythonPackage rec {
   pname = "biopython";
   version = "1.76";
 
-  # src = fetchPypi {
-  #   inherit pname version;
-  #   sha256 = "0wlch9xpa0fpgjzyxi6jsfca6iakaq9a05927xg8vqnmvaccnwrq";
-  # };
-  src = fetchurl {
-    url = "http://biopython.org/DIST/biopython-1.76.tar.gz";
-    sha256 = lib.fakeSha256;
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "0wlch9xpa0fpgjzyxi6jsfca6iakaq9a05927xg8vqnmvaccnwrq";
   };
 
   propagatedBuildInputs = [ numpy ];
